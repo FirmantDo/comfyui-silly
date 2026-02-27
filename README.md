@@ -27,6 +27,8 @@ This is an open source template. Source code available at: [github.com/runpod-wo
 
 ## Custom Arguments
 
+Enable CORS header for '*' by default.
+
 Edit `/workspace/runpod-slim/comfyui_args.txt` (one arg per line):
 
 ```
@@ -39,3 +41,4 @@ Edit `/workspace/runpod-slim/comfyui_args.txt` (one arg per line):
 - `/workspace/runpod-slim/ComfyUI`: ComfyUI install
 - `/workspace/runpod-slim/comfyui_args.txt`: ComfyUI args
 - `/workspace/runpod-slim/filebrowser.db`: FileBrowser DB
+
