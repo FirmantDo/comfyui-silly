@@ -14,6 +14,12 @@ Run the latest ComfyUI. First start installs dependencies (takes a few minutes),
 - ComfyUI-Manager
 - ComfyUI-KJNodes
 - Civicomfy
+- ComfyUI-RunpodDirect
+- ComfyUI-Easy-Use
+- ComfyUI-Impact-Pack
+- ComfyUI-Impact-Subpack
+- WeiLin-Comfyui-Tools
+- comfyui_controlnet_aux
 
 ## Source Code
 
