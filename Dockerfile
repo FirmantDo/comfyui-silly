@@ -47,7 +47,13 @@ RUN git clone https://github.com/comfyanonymous/ComfyUI.git
 WORKDIR /tmp/build/ComfyUI/custom_nodes
 RUN git clone https://github.com/ltdrdata/ComfyUI-Manager.git && \
     git clone https://github.com/kijai/ComfyUI-KJNodes && \
-    git clone https://github.com/MoonGoblinDev/Civicomfy
+    git clone https://github.com/MoonGoblinDev/Civicomfy && \
+    git clone https://github.com/MadiatorLabs/ComfyUI-RunpodDirect && \
+    git clone https://github.com/yolain/ComfyUI-Easy-Use && \
+    git clone https://github.com/ltdrdata/ComfyUI-Impact-Pack && \
+    git clone https://github.com/ltdrdata/ComfyUI-Impact-Subpack && \
+    git clone https://github.com/weilin9999/WeiLin-Comfyui-Tools && \
+    git clone https://github.com/Fannovel16/comfyui_controlnet_aux
 
 # Install PyTorch and all ComfyUI dependencies
 RUN python3.12 -m pip install --no-cache-dir \
@@ -60,10 +66,10 @@ RUN python3.12 -m pip install --no-cache-dir -r requirements.txt && \
 # Install custom node dependencies
 WORKDIR /tmp/build/ComfyUI/custom_nodes
 RUN for node_dir in */; do \
-        if [ -f "$node_dir/requirements.txt" ]; then \
-            echo "Installing requirements for $node_dir"; \
-            python3.12 -m pip install --no-cache-dir -r "$node_dir/requirements.txt" || true; \
-        fi; \
+    if [ -f "$node_dir/requirements.txt" ]; then \
+    echo "Installing requirements for $node_dir"; \
+    python3.12 -m pip install --no-cache-dir -r "$node_dir/requirements.txt" || true; \
+    fi; \
     done
 
 # ============================================================================

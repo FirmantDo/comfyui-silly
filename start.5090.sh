@@ -163,6 +163,11 @@ if [ ! -d "$COMFYUI_DIR" ] || [ ! -d "$VENV_DIR" ]; then
         "https://github.com/kijai/ComfyUI-KJNodes"
         "https://github.com/MoonGoblinDev/Civicomfy"
         "https://github.com/MadiatorLabs/ComfyUI-RunpodDirect"
+        "https://github.com/yolain/ComfyUI-Easy-Use"
+        "https://github.com/ltdrdata/ComfyUI-Impact-Pack"
+        "https://github.com/ltdrdata/ComfyUI-Impact-Subpack"
+        "https://github.com/weilin9999/WeiLin-Comfyui-Tools"
+        "https://github.com/Fannovel16/comfyui_controlnet_aux"
     )
 
     for repo in "${CUSTOM_NODES[@]}"; do
@@ -259,7 +264,7 @@ fi
 
 # Start ComfyUI with custom arguments if provided
 cd $COMFYUI_DIR
-FIXED_ARGS="--listen 0.0.0.0 --port 8188"
+FIXED_ARGS="--listen 0.0.0.0 --port 8188 --enable-cors-header"
 if [ -s "$ARGS_FILE" ]; then
     # File exists and is not empty, combine fixed args with custom args
     CUSTOM_ARGS=$(grep -v '^#' "$ARGS_FILE" | tr '\n' ' ')
